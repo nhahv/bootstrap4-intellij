@@ -55,7 +55,7 @@ class ContextOption {
             ContextOption.builder().name("PHP").value(true).build(),
             ContextOption.builder().name("GSP").value(true).build(),
             ContextOption.builder().name("JSP").value(true).build(),
-            ContextOption.builder().name("VUE").value(true).build(),
+            ContextOption.builder().name("Vue").value(true).build(),
             ContextOption.builder().name("JSX_HTML").value(true).build()
 
     ))
