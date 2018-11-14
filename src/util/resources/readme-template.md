@@ -1,7 +1,7 @@
-Bootstrap 4 & Font awesome snippets for IntelliJ
+Bootstrap 4 & Font Awesome 5 snippets for IntelliJ
 ===========================
 
-A set of Bootstrap 4 & Font awesome snippets for the following JetBrains products:
+A set of Bootstrap 4 & Font Awesome 5 snippets for the following JetBrains products:
 
 - IntelliJ IDEA
 - WebStorm and PhpStorm
@@ -13,7 +13,7 @@ A set of Bootstrap 4 & Font awesome snippets for the following JetBrains product
 Create a new HTML document and
 
 1. Type `b4-` followed by pressing `Ctrl+Space` to see all available bootstrap 4 snippets.
-2. Type `fa-` followed by pressing `Ctrl+Space` to see all available font awesome snippets.
+2. Type `fas-` or `far-` or `fab-` followed by pressing `Ctrl+Space` to see all available font awesome snippets.
 
 Alternatively you can type `jumbotron` followed by `Ctrl+J` to see the snippet matches
 
@@ -21,9 +21,9 @@ The detailed list of supported actions are listed [below](#documentation)
 
 ![Plugin in action](help.gif)
 
-Feel free to let me know what else you want added via the [issues](https://github.com/thekalinga/bootstrap4-intellij/issues)
+Feel free to let me know what else you want added via the [issues](https://github.com/nhahv/bootstrap4-intellij/issues)
 
-Suggestions, feedback and other comments welcome via [@thekalinga](https://twitter.com/thekalinga) on Twitter.
+Suggestions, feedback and other comments welcome via [@nhahv](https://twitter.com/nhahv) on Twitter.
 
 ## Installation (in 3 easy steps)
 
@@ -50,7 +50,7 @@ See [here](CHANGELOG.md)
 
 ## License
 
-Bootstrap 4 & Font awesome - IntelliJ Plugin is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Bootstrap 4 & Font Awesome 5 - IntelliJ Plugin is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
 
 ## Disclaimer:
 

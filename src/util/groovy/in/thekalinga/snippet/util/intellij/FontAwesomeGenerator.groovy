@@ -16,14 +16,14 @@ class FontAwesomeGenerator {
             TemplateVariable.builder()
                 .name('1')
                 .alwaysStopAt(true)
-                .expression('\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\"')
+                .expression('\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\"')
                 .build()
         )
 
         def template = Template.builder()
                 .name('fa-\$')
                 .value('<link rel=\"stylesheet\" href=\"$1$\">\$END\$')
-                .description("Font awesome css link")
+                .description("Font Awesome css link")
                 .toReformat(true)
                 .variables(variables)
                 .options(ContextOption.ALL)
@@ -33,7 +33,7 @@ class FontAwesomeGenerator {
 
         ObjectMapper mapper = new ObjectMapper()
         def iconsContainer = mapper.readValue(getClass().getResourceAsStream('/font-awesome.json'), Icons.class)
-        iconsContainer.icons.forEach({ iconStr ->
+        iconsContainer.solid.forEach({ iconStr ->
 
             variables = Arrays.asList(
                 TemplateVariable.builder()
@@ -43,8 +43,46 @@ class FontAwesomeGenerator {
             )
 
             template = Template.builder()
-                    .name("fa-${iconStr}")
-                    .value("<i class=\"fa fa-${iconStr}" + '$1$' +"\" aria-hidden=\"true\"></i>\$END\$")
+                    .name("fas-${iconStr}")
+                    .value("<i class=\"fas fa-${iconStr}" + '$1$' +"\"></i>\$END\$")
+                    .toReformat(false)
+                    .variables(variables)
+                    .options(ContextOption.ALL)
+                    .build()
+
+            templates.add(template)
+        })
+        iconsContainer.regular.forEach({ iconStr ->
+
+            variables = Arrays.asList(
+                    TemplateVariable.builder()
+                            .name('1')
+                            .alwaysStopAt(true)
+                            .build()
+            )
+
+            template = Template.builder()
+                    .name("far-${iconStr}")
+                    .value("<i class=\"far fa-${iconStr}" + '$1$' +"\"></i>\$END\$")
+                    .toReformat(false)
+                    .variables(variables)
+                    .options(ContextOption.ALL)
+                    .build()
+
+            templates.add(template)
+        })
+        iconsContainer.brands.forEach({ iconStr ->
+
+            variables = Arrays.asList(
+                    TemplateVariable.builder()
+                            .name('1')
+                            .alwaysStopAt(true)
+                            .build()
+            )
+
+            template = Template.builder()
+                    .name("fab-${iconStr}")
+                    .value("<i class=\"fab fa-${iconStr}" + '$1$' +"\"></i>\$END\$")
                     .toReformat(false)
                     .variables(variables)
                     .options(ContextOption.ALL)
@@ -56,7 +94,7 @@ class FontAwesomeGenerator {
         xmlMapper.enable(INDENT_OUTPUT);
         File file = new File("src/main/resources/font-awesome.xml");
 
-        TemplateSet templateSet = TemplateSet.builder().group("Font awesome")
+        TemplateSet templateSet = TemplateSet.builder().group("Font Awesome 5")
                 .templates(templates).build()
 
         xmlMapper.writeValue(file, templateSet)

@@ -50,12 +50,14 @@ class TemplateVariable {
 class ContextOption {
 
     static final List<ContextOption> ALL = Collections.unmodifiableList(Arrays.asList(
-        ContextOption.builder().name("HTML_TEXT").value(true).build(),
-        ContextOption.builder().name("HTML").value(true).build(),
-        ContextOption.builder().name("PHP").value(true).build(),
-        ContextOption.builder().name("GSP").value(true).build(),
-        ContextOption.builder().name("JSP").value(true).build(),
-        ContextOption.builder().name("JSX_HTML").value(true).build()
+            ContextOption.builder().name("HTML_TEXT").value(true).build(),
+            ContextOption.builder().name("HTML").value(true).build(),
+            ContextOption.builder().name("PHP").value(true).build(),
+            ContextOption.builder().name("GSP").value(true).build(),
+            ContextOption.builder().name("JSP").value(true).build(),
+            ContextOption.builder().name("VUE").value(true).build(),
+            ContextOption.builder().name("JSX_HTML").value(true).build()
+
     ))
 
     @JacksonXmlProperty(isAttribute = true)

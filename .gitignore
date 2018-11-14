@@ -6,5 +6,6 @@ target/
 .classpath
 /bootstrap.xml
 /font-awesome.xml
+out/
 *.*~
 *.log
